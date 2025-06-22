@@ -307,12 +307,16 @@ header .navbar ul li a:hover, header .navbar ul li a:focus {
     gap: 3rem;
   }
   .img-container {
-    margin-left: 0;
-    margin-top: 2rem;
-    height: 20rem;
-    width: 20rem;
-    border-radius:20rem;
-  }
+  height: 18rem;
+  width: 18rem;
+  margin-top: 2rem;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.img-container img {
+  width: 90%;
+}
+
 }
 .skills-list {
   width: 100%;
