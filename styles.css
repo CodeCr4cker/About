@@ -108,7 +108,7 @@ p {
 .container {
   width: 90%;
   max-width: 1200px;
-  margin: auto;
+  margin-top:1rem ;
   padding: 0 2rem;
 }
 .row-container, .column-container {
