@@ -14,7 +14,7 @@
 [data-theme="dark"] {
   --white: #181818;
   --black: #fff;
-  --primary-pink: #ff69b4;
+  --primary-pink: white;
   --secondary-grey: #222;
   --secondary-pink: #8e44ad;
   --footer-black: #111;
