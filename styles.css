@@ -108,7 +108,7 @@ p {
 .container {
   width: 90%;
   max-width: 1200px;
-  margin-top:1rem ;
+  margin:auto ;
   padding: 0 2rem;
 }
 .row-container, .column-container {
@@ -302,6 +302,7 @@ header .navbar ul li a:hover, header .navbar ul li a:focus {
     display: block;
   }
   .row-container {
+    margin-top: 2rem;
     flex-direction: column;
     gap: 3rem;
   }
