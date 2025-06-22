@@ -310,7 +310,8 @@ header .navbar ul li a:hover, header .navbar ul li a:focus {
     margin-left: 0;
     margin-top: 2rem;
     height: 20rem;
-  width: 20rem;
+    width: 20rem;
+    border-radius:20rem;
   }
 }
 .skills-list {
