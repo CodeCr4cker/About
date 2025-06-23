@@ -1,13 +1,7 @@
 // ==== Firebase Config ====
-// Replace with your Firebase config!
-// Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
 
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
   apiKey: "AIzaSyB5B4QX1tUIw0lSYsjy-HW7pvHOe4nMmL4",
   authDomain: "website-1f91d.firebaseapp.com",
@@ -18,9 +12,9 @@ const firebaseConfig = {
   measurementId: "G-F5TKYBL0R2"
 };
 
-// Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
+
 // ==== Admin Auth Logic ====
 const adminModal = document.getElementById('admin-modal');
 const adminLoginBtn = document.getElementById('admin-login-btn');
@@ -32,21 +26,24 @@ const loginForm = document.getElementById('login-form');
 const loginError = document.getElementById('login-error');
 
 // Show/hide login modal
-adminLoginBtn.onclick = function() {
+adminLoginBtn.onclick = function () {
   loginModal.style.display = 'flex';
   loginError.style.display = 'none';
   loginForm.reset();
 };
-closeLogin.onclick = function() {
+closeLogin.onclick = function () {
   loginModal.style.display = 'none';
 };
-window.onclick = function(event) {
+
+// Unified window click handler for all modals
+window.onclick = function (event) {
   if (event.target === loginModal) loginModal.style.display = 'none';
   if (event.target === adminModal) adminModal.style.display = 'none';
+  if (event.target === modal) modal.style.display = 'none'; // blog modal
 };
 
 // Handle login form
-loginForm.onsubmit = function(e) {
+loginForm.onsubmit = function (e) {
   e.preventDefault();
   const email = document.getElementById('login-email').value;
   const password = document.getElementById('login-password').value;
@@ -62,22 +59,20 @@ loginForm.onsubmit = function(e) {
     });
 };
 
-// Show/hide admin dashboard if authenticated
 function showAdminDashboard() {
   adminModal.style.display = 'flex';
   animateAdminCounters();
 }
-closeAdmin.onclick = function() {
+closeAdmin.onclick = function () {
   adminModal.style.display = 'none';
 };
-adminLogoutBtn.onclick = function() {
+adminLogoutBtn.onclick = function () {
   auth.signOut().then(() => {
     adminModal.style.display = 'none';
     adminLoginBtn.style.display = 'block';
   });
 };
 
-// Show/hide buttons and modals based on auth state
 auth.onAuthStateChanged(user => {
   if (user) {
     adminLoginBtn.style.display = 'none';
@@ -87,7 +82,6 @@ auth.onAuthStateChanged(user => {
   }
 });
 
-// Animate admin counters (dummy, replace with real data if you wish)
 function animateAdminCounters() {
   function animateAdminCounter(id, end) {
     let cur = 0, step = Math.ceil(end / 40);
@@ -104,28 +98,20 @@ function animateAdminCounters() {
   animateAdminCounter('admin-messages', 18);
 }
 
-// --- Everything below here is your animated features, navbar, loader, etc. ---
+// ==== Loader Logic ====
+window.addEventListener("load", function () {
+  setTimeout(() => {
+    const loader = document.getElementById('loader');
+    const app = document.getElementById('app');
+    if (loader && app) {
+      loader.style.display = 'none';
+      app.classList.remove('hidden');
+    }
+  }, 3000);
+});
 
-// Loader logic
-  window.onload = function () {
-    setTimeout(() => {
-      document.getElementById('loader').style.display = 'none';
-      document.getElementById('app').classList.remove('hidden');
-    }, 3000); // 3 seconds
-  };
+// ==== All Other UI Scripts ====
 
-// Custom Cursor
-//const cursor = document.getElementById('custom-cursor');
-//document.addEventListener('mousemove', e => {
-//  cursor.style.left = e.clientX + 'px';
- // cursor.style.top = e.clientY + 'px';
-//});
-//document.querySelectorAll('a,button,.primary-btn').forEach(el => {
-//  el.addEventListener('mouseenter', () => document.body.classList.add('cursor-hover'));
- // el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hover'));
-//});
-
-// Particles.js config
 particlesJS('particles-js', {
   particles: {
     number: { value: 45, density: { enable: true, value_area: 900 } },
@@ -143,7 +129,6 @@ particlesJS('particles-js', {
   retina_detect: true
 });
 
-// Dark/Light Mode Auto-detect
 const themeToggle = document.getElementById('theme-toggle');
 window.addEventListener('DOMContentLoaded', () => {
   if (!localStorage.getItem('theme')) {
@@ -167,17 +152,11 @@ themeToggle.onclick = () => {
     swapFavicon('dark');
   }
 };
-// Favicon swap for theme
 function swapFavicon(theme) {
   const favicon = document.getElementById('dynamic-favicon');
-  if (theme === 'dark') {
-    favicon.href = 'favicon-dark.ico';
-  } else {
-    favicon.href = 'favicon.ico';
-  }
+  favicon.href = theme === 'dark' ? 'favicon-dark.ico' : 'favicon.ico';
 }
 
-// Hamburger menu for mobile
 const menuBtn = document.getElementById('menu-btn');
 const navbar = document.querySelector('header .navbar');
 menuBtn.onclick = () => {
@@ -185,7 +164,6 @@ menuBtn.onclick = () => {
   menuBtn.classList.toggle('fa-xmark');
   menuBtn.classList.toggle('fa-bars');
 };
-// Close navbar on link click (mobile)
 document.querySelectorAll('header .navbar a').forEach(link => {
   link.onclick = () => {
     navbar.classList.remove('active');
@@ -194,13 +172,11 @@ document.querySelectorAll('header .navbar a').forEach(link => {
   };
 });
 
-// Back to top button show/hide
 const backToTop = document.getElementById('back-to-top');
 window.onscroll = () => {
   backToTop.style.display = window.scrollY > 300 ? 'block' : 'none';
 };
 
-// Typing effect
 const typingTarget = document.getElementById('typing');
 const typingTexts = [
   "I'm Divyanshu Pandey",
@@ -218,7 +194,6 @@ function type() {
 }
 type();
 
-// Animated Skills Progress Bars
 let skillsAnimated = false;
 function animateSkills() {
   document.querySelectorAll('.progress').forEach(bar => {
@@ -240,24 +215,18 @@ window.addEventListener('scroll', () => {
   }
 });
 
-// Project Filter
 document.querySelectorAll('.filter-btn').forEach(btn => {
-  btn.onclick = function() {
+  btn.onclick = function () {
     document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
     let filter = btn.getAttribute('data-filter');
     document.querySelectorAll('.project-card').forEach(card => {
       let tags = card.getAttribute('data-tags').split(' ');
-      if (filter === 'all' || tags.includes(filter)) {
-        card.classList.remove('hide');
-      } else {
-        card.classList.add('hide');
-      }
+      card.classList.toggle('hide', !(filter === 'all' || tags.includes(filter)));
     });
   };
 });
 
-// Animated Counters
 let countersAnimated = false;
 function animateCounters() {
   document.querySelectorAll('.counter').forEach(counter => {
@@ -282,9 +251,8 @@ window.addEventListener('scroll', () => {
   }
 });
 
-// Timeline Animation
 function showTimelineItems() {
-  document.querySelectorAll('.timeline-item').forEach((item, idx) => {
+  document.querySelectorAll('.timeline-item').forEach(item => {
     let rect = item.getBoundingClientRect();
     if (rect.top < window.innerHeight - 120) item.classList.add('visible');
   });
@@ -292,9 +260,8 @@ function showTimelineItems() {
 window.addEventListener('scroll', showTimelineItems);
 showTimelineItems();
 
-// Timeline Dots (Click to scroll)
 document.querySelectorAll('.timeline-dot').forEach(dot => {
-  dot.onclick = function() {
+  dot.onclick = function () {
     let idx = dot.getAttribute('data-index');
     let item = document.querySelector(`.timeline-item[data-index="${idx}"]`);
     if (item) item.scrollIntoView({ behavior: "smooth", block: "center" });
@@ -303,7 +270,6 @@ document.querySelectorAll('.timeline-dot').forEach(dot => {
   };
 });
 
-// Testimonials carousel with auto-play
 const testimonials = document.querySelectorAll('.testimonial');
 let activeTestimonial = 0, testimonialInterval;
 function showTestimonial(idx) {
@@ -335,26 +301,21 @@ function resetTestimonialAutoplay() {
 showTestimonial(activeTestimonial);
 startTestimonialAutoplay();
 
-// Blog Modal
 const modal = document.getElementById('blog-modal');
 const modalTitle = document.getElementById('modal-title');
 const modalContent = document.getElementById('modal-content');
 document.querySelectorAll('.read-more-btn').forEach(btn => {
-  btn.onclick = function() {
+  btn.onclick = function () {
     modal.style.display = 'flex';
     modalTitle.textContent = btn.getAttribute('data-title');
     modalContent.textContent = btn.getAttribute('data-content');
   };
 });
-document.querySelector('.close-modal').onclick = function() {
+document.querySelector('.close-modal').onclick = function () {
   modal.style.display = 'none';
 };
-window.onclick = function(event) {
-  if (event.target === modal) modal.style.display = 'none';
-};
 
-// Contact form validation & success message
-document.getElementById('contact-form').onsubmit = function(e) {
+document.getElementById('contact-form').onsubmit = function (e) {
   e.preventDefault();
   document.getElementById('contact-success').style.display = 'block';
   this.reset();
@@ -363,5 +324,4 @@ document.getElementById('contact-form').onsubmit = function(e) {
   }, 5000);
 };
 
-// Set current year in footer
 document.getElementById('year').textContent = new Date().getFullYear();
