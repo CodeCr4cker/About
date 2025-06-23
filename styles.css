@@ -1,11 +1,13 @@
 :root {
   --white: #ffffff;
   --black: #000;
+  --primary: #3658dc;
   --primary-pink: #ff0000;
   --secondary-grey: rgb(192, 237, 255);
   --secondary-pink: rgb(76, 0, 255);
   --footer-black: #222;
   --card-bg: #f5f5ff;
+  --bg: #fff;
   --timeline-dot: #ff0000;
   --progress-bg: #eee;
   --progress-fill: #ff0000;
@@ -13,11 +15,13 @@
 }
 [data-theme="dark"] {
   --white: #181818;
+  --primary: #ffa500;
   --black: #fff;
   --primary-pink: white;
   --secondary-grey: #222;
   --secondary-pink: #8e44ad;
   --footer-black: #111;
+  --bg: #131313;
   --card-bg: #222;
   --timeline-dot: #ff69b4;
   --progress-bg: #555;
