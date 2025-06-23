@@ -107,22 +107,23 @@ function animateAdminCounters() {
 // --- Everything below here is your animated features, navbar, loader, etc. ---
 
 // Loader logic
-window.addEventListener('DOMContentLoaded', () => {
-  setTimeout(() => {
-    document.body.classList.add('loaded');
-  }, 1200);
-});
+  window.onload = function () {
+    setTimeout(() => {
+      document.getElementById('loader').style.display = 'none';
+      document.getElementById('app').classList.remove('hidden');
+    }, 3000); // 3 seconds
+  };
 
 // Custom Cursor
-const cursor = document.getElementById('custom-cursor');
-document.addEventListener('mousemove', e => {
-  cursor.style.left = e.clientX + 'px';
-  cursor.style.top = e.clientY + 'px';
-});
-document.querySelectorAll('a,button,.primary-btn').forEach(el => {
-  el.addEventListener('mouseenter', () => document.body.classList.add('cursor-hover'));
-  el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hover'));
-});
+//const cursor = document.getElementById('custom-cursor');
+//document.addEventListener('mousemove', e => {
+//  cursor.style.left = e.clientX + 'px';
+ // cursor.style.top = e.clientY + 'px';
+//});
+//document.querySelectorAll('a,button,.primary-btn').forEach(el => {
+//  el.addEventListener('mouseenter', () => document.body.classList.add('cursor-hover'));
+ // el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hover'));
+//});
 
 // Particles.js config
 particlesJS('particles-js', {
