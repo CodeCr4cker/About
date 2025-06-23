@@ -98,18 +98,17 @@ function animateAdminCounters() {
   animateAdminCounter('admin-messages', 18);
 }
 
-// ==== Loader Logic ====
-window.addEventListener("load", function () {
+// Loader and App Display
+window.onload = function() {
   setTimeout(() => {
-    const loader = document.getElementById('loader');
-    const app = document.getElementById('app');
-    if (loader && app) {
-      loader.style.display = 'none';
-      app.classList.remove('hidden');
-    }
+    document.getElementById('loader').style.opacity = '0';
+    setTimeout(() => {
+      document.getElementById('loader').style.display = 'none';
+      document.getElementById('app').classList.remove('hidden');
+      animateProgressBars();
+    }, 600);
   }, 3000);
-});
-
+};
 // ==== All Other UI Scripts ====
 
 particlesJS('particles-js', {
