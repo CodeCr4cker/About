@@ -98,7 +98,7 @@ p {
 
     
 
-    button {
+    /* button {
       margin-top: 20px;
       padding: 10px 20px;
       background-color: #007bff;
@@ -113,7 +113,7 @@ p {
     button:hover {
       background-color: #0056b3;
     }
-
+*/
     .popup {
       position: fixed;
       top: 50%;
@@ -164,9 +164,9 @@ p {
       }
 
 
-      button {
+    /*  button {
         font-size: 0.95rem;
-      }
+      } */
     }
 
 .bg-black {
