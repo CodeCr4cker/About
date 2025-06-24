@@ -1,3 +1,24 @@
+// read more mobile-friendly 
+    const readMoreBtn = document.getElementById('readMoreBtn');
+    const popup = document.getElementById('popup');
+    const overlay = document.getElementById('overlay');
+    const closeBtn = document.getElementById('closeBtn');
+
+    readMoreBtn.addEventListener('click', () => {
+      popup.classList.add('show');
+      overlay.classList.add('show');
+    });
+
+    closeBtn.addEventListener('click', () => {
+      popup.classList.remove('show');
+      overlay.classList.remove('show');
+    });
+
+    overlay.addEventListener('click', () => {
+      popup.classList.remove('show');
+      overlay.classList.remove('show');
+    });
+
 // Dark/Light mode toggle
 const themeToggle = document.getElementById('theme-toggle');
 themeToggle.onclick = () => {
