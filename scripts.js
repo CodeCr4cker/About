@@ -7,11 +7,15 @@
     readMoreBtn.addEventListener('click', () => {
       popup.classList.add('show');
       overlay.classList.add('show');
+      document.body.style.overflow = 'hidden'; // disables scroll when popup opens
+
     });
 
     closeBtn.addEventListener('click', () => {
       popup.classList.remove('show');
       overlay.classList.remove('show');
+       document.body.style.overflow = 'auto';   // re-enables scroll when popup closes
+        
     });
 
     overlay.addEventListener('click', () => {
