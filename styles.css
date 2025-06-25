@@ -1,31 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&display=swap");
 
-:root {
-  --white: #ffffff;
-  --black: #000;
-  --overlay: rgb(76, 0, 255);
-  --primary-pink: #ff0000;
-  --secondary-grey: rgb(192, 237, 255);
-  --secondary-pink: rgb(76, 0, 255);
-  --footer-black: #222;
-  --card-bg: #f5f5ff;
-  --timeline-dot: #ff0000;
-  --progress-bg: #eee;
-  --progress-fill: #ff0000;
-  --testimonial-bg: #f6e9ff;
-
-  --bg-light: #ffffff;
-      --bg-dark: #1e1e1e;
-      --text-light: #333333;
-      --text-dark: #f0f0f0;
-      --primary: #2506ad;
-}
-[data-theme="dark"] {
+:root {  
   --white: #181818;
   --black: #fff;
   --overlay: #8e44ad;
   --primary-pink: white;
+    --btn1:rgb(0, 102, 255);
+  --btn2:rgb(0, 47, 255);
   --secondary-grey: #222;
   --secondary-pink: #8e44ad;
   --footer-black: #111;
@@ -34,8 +16,40 @@
   --progress-bg: #555;
   --progress-fill: #ff69b4;
   --testimonial-bg: #2e2e2e;
-  --breaf: #f0f0f0;
+  --breaf: #f0f0f0;    
+  
+  --primary: #ffd000;
+      /* --primary-dark: #000000; */
+      --bg-light: #1a1b1b;
+      --bg-dark: #0d3ace;
+      --text-light: #9900ff;
+      --text-dark: #2bff00;
+      --highlight: #cc7126;
+      
+  /* --white: #ffffff;
+  --black: #000;
+  --overlay: rgb(76, 0, 255);
+  /* --primary-pink: #00ff95; */
+  /* --secondary-grey: rgb(0, 255, 213);
+  --secondary-pink: rgb(255, 153, 0);
+  --footer-black: #222;
+  --card-bg: #f5f5ff;
+  --timeline-dot: #ff0000;
+  --progress-bg: #eee;
+  --progress-fill: #ff0000;
+  --btn1:rgb(0, 102, 255);
+  --btn2:rgb(255, 251, 0);
+  --testimonial-bg: #f6e9ff;
+
+  --bg-light: #ffffff;
+      --bg-dark: #1e1e1e;
+      --text-light: #333333;
+      --text-dark: #f0f0f0;
+      --primary: #2506ad; */ 
 }
+/* body.dark-mode{
+
+} */
 *,
 *::before,
 *::after {
@@ -105,8 +119,8 @@ p {
 }
 
 .primary-btn {
-  border: 0.1rem solid var(--primary-pink);
-  background: var(--primary-pink);
+  border: 0.1rem solid var(--btn2);
+  background: var(--btn1);
   font-size: 2.1rem;
   border-radius: 5rem;
   color: var(--white);
@@ -116,8 +130,8 @@ p {
   transition: background 0.2s;
 }
 .primary-btn:hover {
-  background: var(--secondary-pink);
-  border-color: var(--secondary-pink);
+  background: var(--btn1);
+  border-color: var(--btn2);
 }
 
     #loader {
@@ -267,7 +281,7 @@ img {
   border-radius: 50%;
   overflow: hidden;
 }
-.img-container img {
+/* .img-container img {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
@@ -275,7 +289,7 @@ img {
   border-radius: 50%;
   width: 80%;
   border: 0.3rem solid var(--primary-pink);
-}
+} */
 .img {
   margin-top: 2rem;
   height: 3rem;
@@ -316,21 +330,165 @@ input:focus, textarea:focus {
   color: #fff;
   font-size: 1.2rem;
 }
-/* #theme-toggle {
+
+/* Education Styles */
+.zcontainer {
+      max-width: 900px;
+      margin: 32px auto;
+      background: var(--bg-light);
+      border-radius: 12px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+      padding: 32px 24px;
+    }
+
+    body.dark .zcontainer {
+      background: #23272f;
+    }
+
+    .aling {
+      text-align: center;
+      font-size: 4rem;
+      margin-bottom: 24px;
+    }
+
+    .ztimeline {
+      position: relative;
+      margin-left: 24px;
+      padding-left: 24px;
+      border-left: 4px solid var(--primary);
+    }
+
+    body.dark .ztimeline {
+      border-left-color: var(--highlight);
+    }
+
+    .zeducation-item {
+      position: relative;
+      margin-bottom: 32px;
+      padding-left: 24px;
+    }
+
+    .zeducation-dot {
+      position: absolute;
+      left: -32px;
+      top: 8px;
+      background: var(--primary);
+      border-radius: 50%;
+      width: 16px;
+      height: 16px;
+      border: 3px solid var(--bg-light);
+      box-shadow: 0 0 0 2px var(--primary);
+    }
+
+    body.dark .zeducation-dot {
+      background: var(--highlight);
+      border-color: #23272f;
+      box-shadow: 0 0 0 2px var(--highlight);
+    }
+
+    .zedu-header {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .zedu-years {
+      font-size: 1rem;
+      color: #666;
+      margin-bottom: 8px;
+    }
+
+    .zedu-details {
+      display: none;
+      color: inherit;
+      margin-top: 10px;
+    }
+
+    .zlist {
+      list-style-type: disc;
+      padding-left: 20px;
+      margin: 0;
+    }
+
+    .zlist-item {
+      font-size: 0.8rem;
+      margin-bottom: 6px;
+      line-height: 1.4;
+    }
+
+    .zshow-btn {
+      background: var(--btn1);
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      padding: 6px 14px;
+      font-size: 0.95em;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .zshow-btn:hover {
+      background: var(--btn2);
+    }
+
+    body.dark .zshow-btn {
+      background: transparent;
+      color: var(--highlight);
+      border: 1px solid var(--highlight);
+    }
+
+    body.dark .zshow-btn:hover {
+      background: var(--highlight);
+      color: #23272f;
+    }
+
+    .ztoggle-btn {
   position: fixed;
   top: 1rem;
-  right: 0.1rem; 
-  background: var(--primary-pink);
-  color: var(--white);
-  border-radius: 50%;
-  width: 4rem;
-  height: 4rem;
- /* z-index: 1001;
-  font-size: 2rem;
-  cursor: pointer;
+  right: 1rem;
+  padding: 8px 14px;
+  background: var(--zprimary);
+  color: var(--ztext);
   border: none;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.2); */
+  border-radius: 6px;
+  cursor: pointer;
+  z-index: 999;
 }
+
+    body.dark .ztheme-toggle {
+      background: #23272f;
+      color: var(--highlight);
+      border-color: var(--highlight);
+    }
+
+    @media (max-width: 600px) {
+      .zcontainer {
+        padding: 16px 12px;
+        margin: 16px;
+      }
+
+      h2 {
+        font-size: 1.5rem;
+      }
+
+      .zedu-header {
+        font-size: 1.1rem;
+      }
+
+      .zedu-years {
+        font-size: 0.9rem;
+      }
+
+      .zlist-item {
+        font-size: 0.5rem;
+      }
+
+      .ztheme-toggle {
+        padding: 5px 10px;
+        font-size: 0.85em;
+      }
+    }
+
 #back-to-top {
   position: fixed;
   bottom: 2rem;
@@ -487,7 +645,7 @@ header .navbar ul li a:hover, header .navbar ul li a:focus {
   border-radius: 0.7rem;
   margin-bottom: 1rem;
 }
-.timeline {
+/* .timeline {
   position: relative;
   margin: 3rem 0;
   width: 100%;
@@ -516,7 +674,7 @@ header .navbar ul li a:hover, header .navbar ul li a:focus {
   padding: 1.5rem;
   border-radius: 1rem;
   box-shadow: 0 1px 4px rgba(100,0,100,0.03);
-}
+} */
 .achievements-grid {
   display: flex;
   flex-wrap: wrap;
@@ -591,7 +749,7 @@ header .navbar ul li a:hover, header .navbar ul li a:focus {
   text-align: center;
 }
 #contact-form {
-  idth: 100%;
+  width: 100%;
   max-width: 400px;
   margin: auto;
 }
@@ -613,162 +771,230 @@ header .navbar ul li a:hover, header .navbar ul li a:focus {
 /* education section starts */
 
 
-    .zcontainer {
-      max-width: 900px;
-      margin: 32px auto;
-      background: var(--bg-light);
-      border-radius: 12px;
-      box-shadow: 0 4px 24px rgba(0,0,0,0.08);
-      padding: 32px 24px;
+    section#job-track {
+      padding: 40px 15px;
     }
 
-    body.dark .zcontainer {
-      background: #23272f;
-    }
-
-    h2 {
+    .title-headline {
       text-align: center;
       font-size: 2rem;
-      margin-bottom: 24px;
+      margin-bottom: 30px;
+      color: var(--primary);
     }
 
-    .ztimeline {
+    .journey-wrapper {
       position: relative;
-      margin-left: 24px;
-      padding-left: 24px;
-      border-left: 4px solid var(--primary);
+      max-width: 1200px;
+      margin: auto;
     }
 
-    body.dark .ztimeline {
-      border-left-color: var(--highlight);
-    }
-
-    .zeducation-item {
-      position: relative;
-      margin-bottom: 32px;
-      padding-left: 24px;
-    }
-
-    .zeducation-dot {
+    .journey-wrapper::after {
+      content: '';
       position: absolute;
-      left: -32px;
-      top: 8px;
-      background: var(--primary);
+      width: 4px;
+      background-color: var(--primary);
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      margin-left: -2px;
+    }
+
+    .track-node {
+      padding: 15px 20px;
+      position: relative;
+      background-color: inherit;
+      width: 50%;
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.6s ease-in-out;
+    }
+
+    .track-node.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .track-node::after {
+      content: '\f0b1';
+      font-family: "Font Awesome 6 Free";
+      font-weight: 900;
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background-color: var(--primary);
+      color: white;
       border-radius: 50%;
-      width: 16px;
-      height: 16px;
-      border: 3px solid var(--bg-light);
-      box-shadow: 0 0 0 2px var(--primary);
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      text-align: center;
+      font-size: 12px;
+      line-height: 20px;
+      z-index: 1;
     }
 
-    body.dark .zeducation-dot {
-      background: var(--highlight);
-      border-color: #23272f;
-      box-shadow: 0 0 0 2px var(--highlight);
+    .left-align {
+      left: 0;
     }
 
-    .zedu-header {
-      font-size: 1.25rem;
+    .right-align {
+      left: 50%;
+    }
+
+    .left-align::before,
+    .right-align::before {
+      content: " ";
+      height: 0;
+      position: absolute;
+      top: 20px;
+      width: 0;
+      z-index: 1;
+      border: medium solid var(--primary);
+    }
+
+    .left-align::before {
+      right: 20px;
+      border-width: 8px 0 8px 8px;
+      border-color: transparent transparent transparent var(--primary);
+    }
+
+    .right-align::before {
+      left: 20px;
+      border-width: 8px 8px 8px 0;
+      border-color: transparent var(--primary) transparent transparent;
+    }
+
+    .entry-box {
+      padding: 15px;
+      background-color: #e0e7ff;
+      position: relative;
+      border-radius: 6px;
+    }
+
+    body.dark-mode .entry-box {
+      background-color: #2c2c2c;
+    }
+
+    .role-label h2 {
+      font-size: 1.2rem;
+    }
+
+    .role-details {
+      margin-left: 1rem;
+      padding-bottom: 0.5rem;
+    }
+
+    .role-details h3 {
+      font-size: 1.2rem;
       font-weight: 600;
-      margin-bottom: 4px;
     }
 
-    .zedu-years {
+    .role-details p {
       font-size: 1rem;
-      color: #666;
-      margin-bottom: 8px;
     }
 
-    .zedu-details {
-      display: none;
-      color: inherit;
-      margin-top: 10px;
+    .button-wrap {
+      display: flex;
+      justify-content: center;
+      margin-top: 2rem;
     }
 
-    .zlist {
-      list-style-type: disc;
-      padding-left: 20px;
-      margin: 0;
+    .button-wrap .cta-button {
+      position: relative;
+      line-height: 0;
+      padding: 1.2rem 2rem;
+      border-radius: 0.5em;
+      transition: 0.5s;
+      color: #fff;
+      background: var(--primary);
+      box-shadow: 0px 4px 8px rgba(48, 68, 247, 0.6);
+      text-align: center;
+      text-decoration: none;
+      font-size: 1rem;
     }
 
-    .zlist-item {
-      font-size: 0.8rem;
-      margin-bottom: 6px;
-      line-height: 1.4;
+    .button-wrap .cta-button i {
+      margin-left: 0.2rem;
+      font-size: 1rem;
+      transition: 0.3s;
     }
 
-    .zshow-btn {
+    .button-wrap .cta-button:hover {
+      background: #1a047e;
+    }
+
+    .button-wrap .cta-button:hover i {
+      transform: translateX(5px);
+    }
+
+    .theme-toggle {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 1000;
       background: var(--primary);
       color: #fff;
       border: none;
-      border-radius: 6px;
-      padding: 6px 14px;
-      font-size: 0.95em;
+      padding: 8px 12px;
+      border-radius: 5px;
       cursor: pointer;
-      transition: background 0.3s;
+      font-size: 0.9rem;
     }
 
-    .zshow-btn:hover {
-      background: var(--primary-dark);
-    }
-
-    body.dark .zshow-btn {
-      background: transparent;
-      color: var(--highlight);
-      border: 1px solid var(--highlight);
-    }
-
-    body.dark .zshow-btn:hover {
-      background: var(--highlight);
-      color: #23272f;
-    }
-
-    .ztheme-toggle {
-      position: fixed;
-      top: 16px;
-      right: 16px;
-      background: #f2f7ff;
-      border: 1px solid var(--primary);
-      color: var(--primary);
-      border-radius: 18px;
-      padding: 6px 16px;
-      font-size: 0.95em;
-      cursor: pointer;
-      z-index: 1000;
-    }
-
-    body.dark .ztheme-toggle {
-      background: #23272f;
-      color: var(--highlight);
-      border-color: var(--highlight);
-    }
-
-    @media (max-width: 600px) {
-      .zcontainer {
-        padding: 16px 12px;
-        margin: 16px;
+    @media screen and (max-width: 768px) {
+      .journey-wrapper::after {
+        left: 25px;
       }
 
-      h2 {
-        font-size: 1.5rem;
+      .track-node {
+        width: 100%;
+        padding-left: 50px;
+        padding-right: 15px;
+        margin-bottom: 30px;
       }
 
-      .zedu-header {
-        font-size: 1.1rem;
+      .track-node.right-align,
+      .track-node.left-align {
+        left: 0;
       }
 
-      .zedu-years {
+      .track-node::after {
+        left: 10px;
+        font-size: 0.8rem;
+        width: 18px;
+        height: 18px;
+        line-height: 18px;
+      }
+
+      .left-align::before,
+      .right-align::before {
+        left: 25px;
+        border-width: 8px 8px 8px 0;
+        border-color: transparent var(--primary) transparent transparent;
+      }
+
+      .title-headline {
+        font-size: 1.8rem;
+      }
+
+      .role-label h2 {
+        font-size: 1rem;
+      }
+
+      .role-details h3 {
+        font-size: 1rem;
+      }
+
+      .role-details p {
         font-size: 0.9rem;
       }
 
-      .zlist-item {
-        font-size: 0.75rem;
-      }
-
-      .ztheme-toggle {
-        padding: 5px 10px;
-        font-size: 0.85em;
+      .button-wrap .cta-button {
+        font-size: 0.9rem;
+        padding: 1rem 1.6rem;
       }
     }
+  
+
 /* education media queries ends*/
 /* education section ends */

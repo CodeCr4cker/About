@@ -22,20 +22,46 @@ closeBtn.addEventListener('click', closePopup);
 overlay.addEventListener('click', closePopup);
 
 
-
-
 // Dark/Light mode toggle
-const themeToggle = document.getElementById('theme-toggle');
-themeToggle.onclick = () => {
-  if (document.body.getAttribute('data-theme') === 'dark') {
-    document.body.removeAttribute('data-theme');
-    themeToggle.innerHTML = '<i class="fa-solid fa-moon"></i>';
-  } else {
-    document.body.setAttribute('data-theme', 'dark');
-    themeToggle.innerHTML = '<i class="fa-solid fa-sun"></i>';
-  }
-};
 
+  // const zthemeToggle = document.getElementById('zthemeToggle');
+  // const isDarkMode = localStorage.getItem('theme') === 'dark';
+
+  // if (isDarkMode) {
+  //   document.body.classList.add('dark-mode');
+  // }
+
+  // zthemeToggle.addEventListener('click', () => {
+  //   document.body.classList.toggle('dark-mode');
+  //   const isDark = document.body.classList.contains('dark-mode');
+  //   localStorage.setItem('theme', isDark ? 'dark' : 'light');
+  //   zthemeToggle.textContent = isDark ? '☀ Toggle Theme' : '🌙 Toggle Theme';
+  // });
+
+// other
+  const revealElements = document.querySelectorAll('.track-node');
+  const revealOnScroll = () => {
+    for (const el of revealElements) {
+      const top = el.getBoundingClientRect().top;
+      if (top < window.innerHeight - 100) {
+        el.classList.add('visible');
+      }
+    }
+  };
+  window.addEventListener('scroll', revealOnScroll);
+  window.addEventListener('load', revealOnScroll);
+
+
+// Show Details toggle
+const detailBtns = document.querySelectorAll('.zshow-btn');
+detailBtns.forEach(button => {
+  button.addEventListener('click', () => {
+    const details = button.nextElementSibling;
+    const isVisible = details.style.display === 'block';
+    details.style.display = isVisible ? 'none' : 'block';
+    button.textContent = isVisible ? 'Show Details' : 'Hide Details';
+  });
+});
 // Hamburger menu for mobile
 const menuBtn = document.getElementById('menu-btn');
 const navbar = document.querySelector('header .navbar');
@@ -51,25 +77,11 @@ document.querySelectorAll('header .navbar a').forEach(link => {
     menuBtn.classList.remove('fa-xmark');
     menuBtn.classList.add('fa-bars');
   };
-});
+}); 
 
-
-  // Toggle 'Read More' in Education Section
-  document.querySelectorAll('.zshow-btn').forEach(button => {
-    button.addEventListener('click', () => {
-      const details = button.nextElementSibling;
-      const isVisible = details.classList.contains('show');
-      details.classList.toggle('show');
-      button.textContent = isVisible ? 'Show Details' : 'Hide Details';
-
-      // Scroll into view on small devices
-      if (!isVisible && window.innerWidth < 600) {
-        setTimeout(() => {
-          details.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }, 300);
-      }
-    });
-  })
+//  function toggleTheme() {
+//       document.body.classList.toggle('dark');
+//     }
 
 // Back to top button show/hide
 const backToTop = document.getElementById('back-to-top');
