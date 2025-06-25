@@ -53,19 +53,24 @@ document.querySelectorAll('header .navbar a').forEach(link => {
   };
 });
 
-// Animate on scroll
-document.querySelectorAll('.zshow-btn').forEach(button => {
-      button.addEventListener('click', () => {
-        const details = button.nextElementSibling;
-        const isVisible = details.style.display === 'block';
-        details.style.display = isVisible ? 'none' : 'block';
-        button.textContent = isVisible ? 'Show Details' : 'Hide Details';
-      });
-    });
 
-   // function toggleTheme() {
-   //   document.body.classList.toggle('dark');
-  //  }
+  // Toggle 'Read More' in Education Section
+  document.querySelectorAll('.zshow-btn').forEach(button => {
+    button.addEventListener('click', () => {
+      const details = button.nextElementSibling;
+      const isVisible = details.classList.contains('show');
+      details.classList.toggle('show');
+      button.textContent = isVisible ? 'Show Details' : 'Hide Details';
+
+      // Scroll into view on small devices
+      if (!isVisible && window.innerWidth < 600) {
+        setTimeout(() => {
+          details.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 300);
+      }
+    });
+  })
+
 // Back to top button show/hide
 const backToTop = document.getElementById('back-to-top');
 window.onscroll = () => {
