@@ -23,16 +23,21 @@ overlay.addEventListener('click', closePopup);
 
 
 // Dark/Light mode toggle
-const themeToggle = document.getElementById('theme-toggle');
-themeToggle.onclick = () => {
-  if (document.body.getAttribute('data-theme') === 'dark') {
-    document.body.removeAttribute('data-theme');
-    themeToggle.innerHTML = '<i class="fa-solid fa-moon"></i>';
-  } else {
-    document.body.setAttribute('data-theme', 'dark');
-    themeToggle.innerHTML = '<i class="fa-solid fa-sun"></i>';
+function toggleTheme() {
+    document.body.classList.toggle('dark-mode');
   }
-};
+
+  const revealElements = document.querySelectorAll('.track-node');
+  const revealOnScroll = () => {
+    for (const el of revealElements) {
+      const top = el.getBoundingClientRect().top;
+      if (top < window.innerHeight - 100) {
+        el.classList.add('visible');
+      }
+    }
+  };
+  window.addEventListener('scroll', revealOnScroll);
+  window.addEventListener('load', revealOnScroll);
 
 
   // Hamburger menu for mobile
