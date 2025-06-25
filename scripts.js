@@ -1,27 +1,24 @@
 // read more mobile-friendly 
-    const readMoreBtn = document.getElementById('readMoreBtn');
-    const popup = document.getElementById('popup');
-    const overlay = document.getElementById('overlay');
-    const closeBtn = document.getElementById('closeBtn');
+    const openBtn = document.getElementById('openPopup');
+const closeBtn = document.getElementById('closePopup');
+const popup = document.getElementById('popup');
+const overlay = document.getElementById('overlay');
 
-    readMoreBtn.addEventListener('click', () => {
-      popup.classList.add('show');
-      overlay.classList.add('show');
-      document.body.style.overflow = 'hidden'; // disables scroll when popup opens
+openBtn.addEventListener('click', () => {
+  popup.classList.add('show');
+  overlay.classList.add('show');
+  document.body.style.overflow = 'hidden'; // 🚫 disables scroll
+});
 
-    });
+const closePopup = () => {
+  popup.classList.remove('show');
+  overlay.classList.remove('show');
+  document.body.style.overflow = 'auto'; // ✅ re-enables scroll
+};
 
-    closeBtn.addEventListener('click', () => {
-      popup.classList.remove('show');
-      overlay.classList.remove('show');
-       document.body.style.overflow = 'auto';   // re-enables scroll when popup closes
-        
-    });
+closeBtn.addEventListener('click', closePopup);
+overlay.addEventListener('click', closePopup);
 
-    overlay.addEventListener('click', () => {
-      popup.classList.remove('show');
-      overlay.classList.remove('show');
-    });
 
 // Dark/Light mode toggle
 const themeToggle = document.getElementById('theme-toggle');
