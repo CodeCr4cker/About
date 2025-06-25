@@ -310,13 +310,13 @@ input:focus, textarea:focus {
 #theme-toggle {
   position: fixed;
   top: 1rem;
-  right: 1rem;
+/*  right: 1rem; */
   background: var(--primary-pink);
   color: var(--white);
   border-radius: 50%;
   width: 4rem;
   height: 4rem;
-  z-index: 1001;
+ /* z-index: 1001;*/
   font-size: 2rem;
   cursor: pointer;
   border: none;
