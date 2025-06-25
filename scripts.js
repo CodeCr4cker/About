@@ -43,19 +43,17 @@ function toggleTheme() {
   // Hamburger menu for mobile
 const menuBtn = document.getElementById('menu-btn');
 const navbar = document.querySelector('header .navbar');
+
 menuBtn.onclick = () => {
   navbar.classList.toggle('active');
-  menuBtn.classList.toggle('fa-xmark');
-  menuBtn.classList.toggle('fa-bars');
 };
-// Close navbar on link click (mobile)
+
 document.querySelectorAll('header .navbar a').forEach(link => {
   link.onclick = () => {
     navbar.classList.remove('active');
-    menuBtn.classList.remove('fa-xmark');
-    menuBtn.classList.add('fa-bars');
   };
 });
+
 
 
 
