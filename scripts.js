@@ -63,9 +63,9 @@ document.querySelectorAll('.zshow-btn').forEach(button => {
       });
     });
 
-    function toggleTheme() {
-      document.body.classList.toggle('dark');
-    }
+   // function toggleTheme() {
+   //   document.body.classList.toggle('dark');
+  //  }
 // Back to top button show/hide
 const backToTop = document.getElementById('back-to-top');
 window.onscroll = () => {
