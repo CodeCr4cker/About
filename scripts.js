@@ -22,25 +22,20 @@ closeBtn.addEventListener('click', closePopup);
 overlay.addEventListener('click', closePopup);
 
 
+
+
 // Dark/Light mode toggle
-function toggleTheme() {
-    document.body.classList.toggle('dark-mode');
+const themeToggle = document.getElementById('theme-toggle');
+themeToggle.onclick = () => {
+  if (document.body.getAttribute('data-theme') === 'dark') {
+    document.body.removeAttribute('data-theme');
+    themeToggle.innerHTML = '<i class="fa-solid fa-moon"></i>';
+  } else {
+    document.body.setAttribute('data-theme', 'dark');
+    themeToggle.innerHTML = '<i class="fa-solid fa-sun"></i>';
   }
+};
 
-  const revealElements = document.querySelectorAll('.track-node');
-  const revealOnScroll = () => {
-    for (const el of revealElements) {
-      const top = el.getBoundingClientRect().top;
-      if (top < window.innerHeight - 100) {
-        el.classList.add('visible');
-      }
-    }
-  };
-  window.addEventListener('scroll', revealOnScroll);
-  window.addEventListener('load', revealOnScroll);
-
-
-  // Hamburger menu for mobile
 // Hamburger menu for mobile
 const menuBtn = document.getElementById('menu-btn');
 const navbar = document.querySelector('header .navbar');
@@ -56,7 +51,7 @@ document.querySelectorAll('header .navbar a').forEach(link => {
     menuBtn.classList.remove('fa-xmark');
     menuBtn.classList.add('fa-bars');
   };
-}); 
+});
 
 
 
