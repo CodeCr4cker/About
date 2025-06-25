@@ -1,7 +1,4 @@
-//loader 
-window.addEventListener('load', () => {
-    document.getElementById('loader').style.display = 'none';
-  });
+
 
 // read more mobile-friendly 
     const openBtn = document.getElementById('openPopup');
