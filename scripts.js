@@ -35,24 +35,22 @@ themeToggle.onclick = () => {
 };
 
 
-  const menuBtn = document.getElementById('menu-btn');
-  const navbar = document.querySelector('.navbar');
-  const icon = menuBtn.querySelector('i');
-
-  menuBtn.onclick = () => {
-    navbar.classList.toggle('active');
-    icon.classList.toggle('fa-bars');
-    icon.classList.toggle('fa-xmark');
+  // Hamburger menu for mobile
+const menuBtn = document.getElementById('menu-btn');
+const navbar = document.querySelector('header .navbar');
+menuBtn.onclick = () => {
+  navbar.classList.toggle('active');
+  menuBtn.classList.toggle('fa-xmark');
+  menuBtn.classList.toggle('fa-bars');
+};
+// Close navbar on link click (mobile)
+document.querySelectorAll('header .navbar a').forEach(link => {
+  link.onclick = () => {
+    navbar.classList.remove('active');
+    menuBtn.classList.remove('fa-xmark');
+    menuBtn.classList.add('fa-bars');
   };
-
-  // Close navbar on link click
-  document.querySelectorAll('.navbar a').forEach(link => {
-    link.onclick = () => {
-      navbar.classList.remove('active');
-      icon.classList.remove('fa-xmark');
-      icon.classList.add('fa-bars');
-    };
-  });
+});
 
 
 
