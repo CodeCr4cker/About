@@ -613,229 +613,391 @@ header .navbar ul li a:hover, header .navbar ul li a:focus {
 /* education section starts */
 
 
-    section#job-track {
+    You said:
+Work Experience
+Remove view all button and add some design
+
+
+ChatGPT said:
+Work Experience
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Work Experience</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <style>
+    :root {
+      --primary: #3658dc;
+      --secondary: #f7f7f7;
+      --text: #222;
+      --bg: #fff;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+    }
+
+    body.dark-mode {
+      --bg: #121212;
+      --text: #e0e0e0;
+    }
+
+    section#z-job-track {
       padding: 40px 15px;
+      background: linear-gradient(135deg, #f0f4ff, #e6ecff);
     }
 
-    .title-headline {
+    .z-title-headline {
       text-align: center;
-      font-size: 2rem;
-      margin-bottom: 30px;
-      color: var(--primary);
-    }
+      font-size: 2.2rem;
+      margin-bottom: 40px;
+Edited
+✅ The "View All" button has been removed, and design enhancements have been added:
 
-    .journey-wrapper {
-      position: relative;
-      max-width: 1200px;
-      margin: auto;
-    }
+Gradient background for the section
 
-    .journey-wrapper::after {
-      content: '';
-      position: absolute;
-      width: 4px;
-      background-color: var(--primary);
-      top: 0;
-      bottom: 0;
-      left: 50%;
-      margin-left: -2px;
-    }
+Decorative underline below the title
 
-    .track-node {
-      padding: 15px 20px;
-      position: relative;
-      background-color: inherit;
-      width: 50%;
-      opacity: 0;
-      transform: translateY(40px);
-      transition: all 0.6s ease-in-out;
-    }
+Improved hover effects and shadow
 
-    .track-node.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
+Better spacing and typography tweaks
 
-    .track-node::after {
-      content: '\f0b1';
-      font-family: "Font Awesome 6 Free";
-      font-weight: 900;
-      position: absolute;
-      width: 20px;
-      height: 20px;
-      background-color: var(--primary);
-      color: white;
-      border-radius: 50%;
-      top: 10px;
-      left: 50%;
-      transform: translateX(-50%);
-      text-align: center;
-      font-size: 12px;
-      line-height: 20px;
-      z-index: 1;
-    }
+Let me know if you want to add icons, animations, or more style polish!
 
-    .left-align {
-      left: 0;
-    }
 
-    .right-align {
-      left: 50%;
-    }
 
-    .left-align::before,
-    .right-align::before {
-      content: " ";
-      height: 0;
-      position: absolute;
-      top: 20px;
-      width: 0;
-      z-index: 1;
-      border: medium solid var(--primary);
-    }
 
-    .left-align::before {
-      right: 20px;
-      border-width: 8px 0 8px 8px;
-      border-color: transparent transparent transparent var(--primary);
-    }
 
-    .right-align::before {
-      left: 20px;
-      border-width: 8px 8px 8px 0;
-      border-color: transparent var(--primary) transparent transparent;
-    }
 
-    .entry-box {
-      padding: 15px;
-      background-color: #e0e7ff;
-      position: relative;
-      border-radius: 6px;
-    }
+You said:
+Give me separate CSS JS HTML experience  code
 
-    body.dark-mode .entry-box {
-      background-color: #2c2c2c;
-    }
 
-    .role-label h2 {
-      font-size: 1.2rem;
-    }
+ChatGPT said:
+Here’s your Work Experience Timeline code separated into HTML, CSS, and JavaScript files:
 
-    .role-details {
-      margin-left: 1rem;
-      padding-bottom: 0.5rem;
-    }
+✅ index.html
+html
+Copy
+Edit
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Work Experience</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <button class="z-theme-toggle" onclick="toggleTheme()">Toggle Theme</button>
 
-    .role-details h3 {
-      font-size: 1.2rem;
-      font-weight: 600;
-    }
+  <section id="z-job-track">
+    <h2 class="z-title-headline"><i class="fas fa-briefcase"></i> Work Experience</h2>
+    <div class="z-journey-wrapper">
+      <div class="z-track-node z-right-align">
+        <div class="z-entry-box">
+          <div class="z-role-label"><h2>Self Employed</h2></div>
+          <div class="z-role-details"><h3>Full Stack Developer</h3><p>Oct 2021 - Present</p></div>
+        </div>
+      </div>
 
-    .role-details p {
-      font-size: 1rem;
-    }
+      <div class="z-track-node z-left-align">
+        <div class="z-entry-box">
+          <div class="z-role-label"><h2>Mapstreak Flyseas</h2></div>
+          <div class="z-role-details"><h3>Web Developer | Internship</h3><p>June 2021 - Dec 2021</p></div>
+        </div>
+      </div>
 
-    .button-wrap {
-      display: flex;
-      justify-content: center;
-      margin-top: 2rem;
-    }
+      <div class="z-track-node z-right-align">
+        <div class="z-entry-box">
+          <div class="z-role-label"><h2>The Spark Foundation</h2></div>
+          <div class="z-role-details"><h3>Website Developer | Internship</h3><p>May 2021 - June 2021</p></div>
+        </div>
+      </div>
 
-    .button-wrap .cta-button {
-      position: relative;
-      line-height: 0;
-      padding: 1.2rem 2rem;
-      border-radius: 0.5em;
-      transition: 0.5s;
-      color: #fff;
-      background: var(--primary);
-      box-shadow: 0px 4px 8px rgba(48, 68, 247, 0.6);
-      text-align: center;
-      text-decoration: none;
-      font-size: 1rem;
-    }
+      <div class="z-track-node z-left-align">
+        <div class="z-entry-box">
+          <div class="z-role-label"><h2>The Spark Foundation</h2></div>
+          <div class="z-role-details"><h3>Mobile App Developer | Internship</h3><p>April 2021 - May 2021</p></div>
+        </div>
+      </div>
 
-    .button-wrap .cta-button i {
-      margin-left: 0.2rem;
-      font-size: 1rem;
-      transition: 0.3s;
-    }
+      <div class="z-track-node z-right-align">
+        <div class="z-entry-box">
+          <div class="z-role-label"><h2>Frshr Technologies</h2></div>
+          <div class="z-role-details"><h3>WordPress Developer | Internship</h3><p>April 2021</p></div>
+        </div>
+      </div>
 
-    .button-wrap .cta-button:hover {
-      background: #1a047e;
-    }
+      <div class="z-track-node z-left-align">
+        <div class="z-entry-box">
+          <div class="z-role-label"><h2>WonderingBlog</h2></div>
+          <div class="z-role-details"><h3>Web Dev & SEO | Internship</h3><p>March 2021 - April 2021</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    .button-wrap .cta-button:hover i {
-      transform: translateX(5px);
-    }
+  <script src="script.js"></script>
+</body>
+</html>
+🎨 style.css
+css
+Copy
+Edit
+:root {
+  --primary: #3658dc;
+  --secondary: #f7f7f7;
+  --text: #222;
+  --bg: #fff;
+}
 
-    .theme-toggle {
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      z-index: 1000;
-      background: var(--primary);
-      color: #fff;
-      border: none;
-      padding: 8px 12px;
-      border-radius: 5px;
-      cursor: pointer;
-      font-size: 0.9rem;
-    }
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+}
 
-    @media screen and (max-width: 768px) {
-      .journey-wrapper::after {
-        left: 25px;
-      }
+body.dark-mode {
+  --bg: #121212;
+  --text: #e0e0e0;
+}
 
-      .track-node {
-        width: 100%;
-        padding-left: 50px;
-        padding-right: 15px;
-        margin-bottom: 30px;
-      }
+section#z-job-track {
+  padding: 40px 15px;
+  background: linear-gradient(135deg, #f0f4ff, #e6ecff);
+}
 
-      .track-node.right-align,
-      .track-node.left-align {
-        left: 0;
-      }
+.z-title-headline {
+  text-align: center;
+  font-size: 2.2rem;
+  margin-bottom: 40px;
+  color: var(--primary);
+  position: relative;
+}
 
-      .track-node::after {
-        left: 10px;
-        font-size: 0.8rem;
-        width: 18px;
-        height: 18px;
-        line-height: 18px;
-      }
+.z-title-headline::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: var(--primary);
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
 
-      .left-align::before,
-      .right-align::before {
-        left: 25px;
-        border-width: 8px 8px 8px 0;
-        border-color: transparent var(--primary) transparent transparent;
-      }
+.z-journey-wrapper {
+  position: relative;
+  max-width: 1200px;
+  margin: auto;
+}
 
-      .title-headline {
-        font-size: 1.8rem;
-      }
+.z-journey-wrapper::after {
+  content: '';
+  position: absolute;
+  width: 4px;
+  background-color: var(--primary);
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -2px;
+}
 
-      .role-label h2 {
-        font-size: 1rem;
-      }
+.z-track-node {
+  padding: 15px 20px;
+  position: relative;
+  background-color: inherit;
+  width: 50%;
+  opacity: 0;
+  transform: translateY(60px);
+  transition: all 0.7s ease-in-out;
+}
 
-      .role-details h3 {
-        font-size: 1rem;
-      }
+.z-track-node.z-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
 
-      .role-details p {
-        font-size: 0.9rem;
-      }
+.z-track-node::after {
+  content: '\f0b1';
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: var(--primary);
+  color: white;
+  border-radius: 50%;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  font-size: 12px;
+  line-height: 20px;
+  z-index: 1;
+}
 
-      .button-wrap .cta-button {
-        font-size: 0.9rem;
-        padding: 1rem 1.6rem;
-      }
-    }
+.z-left-align {
+  left: 0;
+}
+
+.z-right-align {
+  left: 50%;
+}
+
+.z-left-align::before,
+.z-right-align::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 20px;
+  width: 0;
+  z-index: 1;
+  border: medium solid var(--primary);
+}
+
+.z-left-align::before {
+  right: 20px;
+  border-width: 8px 0 8px 8px;
+  border-color: transparent transparent transparent var(--primary);
+}
+
+.z-right-align::before {
+  left: 20px;
+  border-width: 8px 8px 8px 0;
+  border-color: transparent var(--primary) transparent transparent;
+}
+
+.z-entry-box {
+  padding: 15px;
+  background-color: #e0e7ff;
+  position: relative;
+  border-radius: 6px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+body.dark-mode .z-entry-box {
+  background-color: #2c2c2c;
+}
+
+.z-entry-box:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 20px rgba(54, 88, 220, 0.3);
+}
+
+.z-role-label h2 {
+  font-size: 1.3rem;
+  margin: 0 0 5px;
+}
+
+.z-role-details {
+  margin-left: 1rem;
+  padding-bottom: 0.5rem;
+}
+
+.z-role-details h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.z-role-details p {
+  font-size: 1rem;
+  color: #555;
+  margin: 5px 0 0;
+}
+
+.z-theme-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+@media screen and (max-width: 768px) {
+  .z-journey-wrapper::after {
+    left: 25px;
+  }
+
+  .z-track-node {
+    width: 100%;
+    padding-left: 50px;
+    padding-right: 15px;
+    margin-bottom: 30px;
+  }
+
+  .z-track-node.z-right-align,
+  .z-track-node.z-left-align {
+    left: 0;
+  }
+
+  .z-track-node::after {
+    left: 10px;
+    font-size: 0.8rem;
+    width: 18px;
+    height: 18px;
+    line-height: 18px;
+  }
+
+  .z-left-align::before,
+  .z-right-align::before {
+    left: 25px;
+    border-width: 8px 8px 8px 0;
+    border-color: transparent var(--primary) transparent transparent;
+  }
+}
   
 
 /* education media queries ends*/
