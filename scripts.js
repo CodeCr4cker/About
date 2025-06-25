@@ -53,7 +53,17 @@ document.querySelectorAll('header .navbar a').forEach(link => {
   };
 });
 
+// Animate on scroll
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('z-visible');
+      observer.unobserve(entry.target); // Only animate once
+    }
+  });
+}, { threshold: 0.1 });
 
+document.querySelectorAll('.z-track-node').forEach(node => observer.observe(node));
 
 // Back to top button show/hide
 const backToTop = document.getElementById('back-to-top');
