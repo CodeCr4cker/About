@@ -16,7 +16,8 @@
   --progress-bg: #555;
   --progress-fill: #ff69b4;
   --testimonial-bg: #2e2e2e;
-  --breaf: #f0f0f0;    
+  --tttt:rgb(0, 204, 255);
+  --breaf: #000000;    
   --z-primary: #00d9ff;
   --z-bg: #0a0a0a;
   --z-glow: #00d9ff80;
@@ -242,13 +243,20 @@ p {
     padding: 15px;
     font-size: 0.95rem;
   }
+  .bg-grey {
+  background: var(--secondary-grey);
+  /* height: 70rem; */
+}
 }
 
 .bg-black {
   background: var(--footer-black);
+    
 }
+
 .bg-grey {
   background: var(--secondary-grey);
+  /* height: 80rem; */
 }
 .section {
   padding: 6rem 0;
@@ -256,8 +264,34 @@ p {
   justify-content: center;
   align-items: center;
 }
+.containerz{
+    border-radius: 1rem;
+  width: 70rem;
+  height: 40rem;
+  max-width: 1200px;
+  margin:auto ;
+  padding: 0 2rem;
+}
 .container {
-  width: 90%;
+  width: 100%;
+  max-width: 1200px;
+  margin:auto ;
+  padding: 0 2rem;
+}
+.certificate{
+    border: 0.1rem solid var(--btn2);
+  font-size: 2.1rem;
+  border-radius: 5rem;
+  color: var(--tttt);
+  padding: 0.6rem 1.5rem;
+  margin: 0.5rem 0;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+#testimonials {
+  border-radius: 1rem;
+  width: 70rem;
+  height: 40rem;
   max-width: 1200px;
   margin:auto ;
   padding: 0 2rem;
@@ -461,10 +495,10 @@ body.dark .ztheme-toggle {
     font-size: 1.1rem;
   }
   .zedu-years {
-    font-size: 0.9rem;
+    font-size: 1rem;
   }
   .zlist-item {
-    font-size: 0.5rem;
+    font-size: 1.5rem;
   }
   .ztheme-toggle {
     padding: 5px 10px;
@@ -638,6 +672,16 @@ header .navbar ul li a:hover, header .navbar ul li a:focus {
   width: 300px;
   text-align: center;
 }
+@media (max-width: 600px) {
+  .project-card {
+  background: var(--card-bg);
+  border-radius: 1rem;
+  box-shadow: 0 2px 8px rgba(100, 0, 100, 0.07);
+  padding: 2rem;
+  width: 300px;
+}
+
+}
 .project-card img {
   max-width: 100%;
   border-radius: 0.7rem;
@@ -656,7 +700,19 @@ header .navbar ul li a:hover, header .navbar ul li a:focus {
   box-shadow: 0 2px 8px rgba(100, 0, 100, 0.07);
   padding: 2rem;
   width: 300px;
+  /* margin-left: 2rem; */
   text-align: center;
+}
+@media (max-width: 600px) {
+  .achievement-card {
+  background: var(--card-bg);
+  border-radius: 1rem;
+  box-shadow: 0 2px 8px rgba(100, 0, 100, 0.07);
+  padding: 2rem;
+  width: 300px;
+  margin-left: -1.3rem;
+  text-align: center;
+}
 }
 .achievement-card img {
   max-width: 100px;
@@ -672,6 +728,26 @@ header .navbar ul li a:hover, header .navbar ul li a:focus {
   padding: 2rem 1rem 3rem 1rem;
   overflow: hidden;
 }
+@media (max-width: 600px) {
+  .testimonials-carousel {
+  position: relative;
+  width: 80%;
+  max-width: 600px;
+  margin: auto;
+  background: var(--testimonial-bg);
+  border-radius: 1rem;
+  padding: 2rem 1rem 3rem 1rem;
+  overflow: hidden;
+}
+.testimonial {
+  /* align-items: center; */
+  display: none;
+  font-size: 1.5rem;
+  color: var(--black);
+  /* color: red; */
+  min-height: 10rem;
+}
+}
 .testimonial {
   display: none;
   font-size: 1.5rem;
@@ -686,7 +762,7 @@ header .navbar ul li a:hover, header .navbar ul li a:focus {
   position: absolute;
   bottom: 1rem;
   background: var(--primary-pink);
-  color: #fff;
+  color: #000000;
   border: none;
   border-radius: 50%;
   width: 3rem;
@@ -711,16 +787,38 @@ header .navbar ul li a:hover, header .navbar ul li a:focus {
 }
 .blog-card {
   background: var(--card-bg);
+  border-radius: 1.5rem;
+  box-shadow: 0 2px 8px rgba(100, 0, 100, 0.07);
+  padding: 2rem;
+  /* margin-right: 12rem; */
+  width: 300px;
+  text-align: center;
+}
+@media (max-width: 600px){
+  .blog-card {
+  background: var(--card-bg);
   border-radius: 1rem;
   box-shadow: 0 2px 8px rgba(100, 0, 100, 0.07);
   padding: 2rem;
-  width: 300px;
-  text-align: center;
+  margin-left: -1.2rem;
+  width: 100px;
+  /* text-align: center; */
+  justify-items: center;
+}
 }
 #contact-form {
   width: 100%;
   max-width: 400px;
   margin: auto;
+}
+@media (max-width: 600px){
+  #contact-form {
+  width: 100%;
+  max-width: 400px;
+  margin: auto;
+  /* flex-grow: 1rem; */
+  justify-items: center;
+}
 }
 #contact-form input[type="submit"] {
   width: auto;
