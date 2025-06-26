@@ -700,7 +700,19 @@ header .navbar ul li a:hover, header .navbar ul li a:focus {
   box-shadow: 0 2px 8px rgba(100, 0, 100, 0.07);
   padding: 2rem;
   width: 300px;
+  /* margin-left: 2rem; */
   text-align: center;
+}
+@media (max-width: 600px) {
+  .achievement-card {
+  background: var(--card-bg);
+  border-radius: 1rem;
+  box-shadow: 0 2px 8px rgba(100, 0, 100, 0.07);
+  padding: 2rem;
+  width: 300px;
+  margin-left: -1.3rem;
+  text-align: center;
+}
 }
 .achievement-card img {
   max-width: 100px;
@@ -716,6 +728,26 @@ header .navbar ul li a:hover, header .navbar ul li a:focus {
   padding: 2rem 1rem 3rem 1rem;
   overflow: hidden;
 }
+@media (max-width: 600px) {
+  .testimonials-carousel {
+  position: relative;
+  width: 80%;
+  max-width: 600px;
+  margin: auto;
+  background: var(--testimonial-bg);
+  border-radius: 1rem;
+  padding: 2rem 1rem 3rem 1rem;
+  overflow: hidden;
+}
+.testimonial {
+  /* align-items: center; */
+  display: none;
+  font-size: 1.5rem;
+  color: var(--black);
+  /* color: red; */
+  min-height: 10rem;
+}
+}
 .testimonial {
   display: none;
   font-size: 1.5rem;
@@ -730,7 +762,7 @@ header .navbar ul li a:hover, header .navbar ul li a:focus {
   position: absolute;
   bottom: 1rem;
   background: var(--primary-pink);
-  color: #fff;
+  color: #000000;
   border: none;
   border-radius: 50%;
   width: 3rem;
