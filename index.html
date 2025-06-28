@@ -14,31 +14,13 @@
 </head>
 <body>
   <!-- Loader -->
-  <div id="loader">
-    <div class="loader-content">
-      <lottie-player
-        src="https://assets2.lottiefiles.com/packages/lf20_tll0j4bb.json"
-        background="transparent"
-        speed="1"
-        style="width: 120px; height: 120px;"
-        loop
-        autoplay>
-      </lottie-player>
-      <div class="loader-text">
-        <span class="dot">L</span>
-        <span class="dot">o</span>
-        <span class="dot">a</span>
-        <span class="dot">d</span>
-        <span class="dot">i</span>
-        <span class="dot">n</span>
-        <span class="dot">g</span>
-        <span class="dot">.</span>
-        <span class="dot">.</span>
-        <span class="dot">.</span>
-      </div>
+    <div class="preloader">
+    <div class="loader">
+      <div class="loader-outter"></div>
+      <div class="loader-inner"></div>
+      <span>D</span>
     </div>
   </div>
-
   <!-- Back to Top Button -->
   <button onclick="window.scrollTo({top:0,behavior:'smooth'});" id="back-to-top" aria-label="Back to top"><i class="fa fa-arrow-up"></i></button>
 
@@ -87,6 +69,7 @@
 
   <!-- Hero Section -->
   <section id="home" class="first-section bg-grey reveal-on-scroll">
+    		<div id="particles-js"></div>
     <div class="container height row-container">
       <div class="content">
         <br><br><br><br>
@@ -296,5 +279,7 @@
   
   <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
   <script src="scripts.js"></script>
+  <script src="particles.min.js"></script>
+	<script src="app.js"></script>
 </body>
             </html>
