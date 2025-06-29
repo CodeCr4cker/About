@@ -41,24 +41,6 @@ document.querySelectorAll('header .navbar a').forEach(link => {
   };
 });
 
-// read more mobile-friendly 
-const openBtn = document.getElementById('openPopup');
-const closeBtn = document.getElementById('closePopup');
-const popup = document.getElementById('popup');
-const overlay = document.getElementById('overlay');
-
-openBtn.addEventListener('click', () => {
-  popup.classList.add('show');
-  overlay.classList.add('show');
-  document.body.style.overflow = 'hidden';
-});
-const closePopup = () => {
-  popup.classList.remove('show');
-  overlay.classList.remove('show');
-  document.body.style.overflow = 'auto';
-};
-closeBtn.addEventListener('click', closePopup);
-overlay.addEventListener('click', closePopup);
 
 // Show Details toggle
 const detailBtns = document.querySelectorAll('.zshow-btn');
